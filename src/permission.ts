@@ -18,7 +18,8 @@ router.beforeEach(async (to, from, next) => {
   const permissionStore = usePermissionStoreWithOut()
   const appStore = useAppStoreWithOut()
   const userStore = useUserStoreWithOut()
-  if (userStore.getUserInfo) {
+  // if (userStore.getUserInfo) {
+  if (true) {
     if (to.path === '/login') {
       next({ path: '/' })
     } else {
