@@ -80,6 +80,27 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         }
       }
     ]
+  },
+  {
+    path: '/apps',
+    component: Layout,
+    redirect: '/apps/gif-maker',
+    name: 'Apps',
+    meta: {
+      title: t('router.apps'),
+      icon: 'ep:management',
+      alwaysShow: true
+    },
+    children: [
+      {
+        path: 'gif-maker',
+        component: () => import('@/views/Apps/Gif-maker.vue'),
+        name: 'Gif-maker',
+        meta: {
+          title: t('router.gifMaker')
+        }
+      }
+    ]
   }
 ]
 

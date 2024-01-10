@@ -180,7 +180,9 @@ export default {
     imageCropping: '图片裁剪',
     videoPlayer: '视频播放器',
     tableVideoPreview: '表格视频预览',
-    cardTable: '卡片表格'
+    cardTable: '卡片表格',
+    apps: '在线应用',
+    gifMaker: 'GIF 表情包制作'
   },
   permission: {
     hasPermission: '请设置操作权限值'
@@ -550,5 +552,11 @@ export default {
   inputPasswordDemo: {
     title: '密码输入框',
     inputPasswordDes: '基于 ElementPlus 的 Input 组件二次封装'
+  },
+  gifMaker: {
+    title: 'GIF 表情包制作',
+    description: '自定义 GIF 表情包中的台词',
+    template: '模板',
+    sentence: '第%句'
   }
 }
