@@ -43,7 +43,7 @@ export const useAppStore = defineStore('app', {
       breadcrumbIcon: false, // 面包屑图标
       collapse: false, // 折叠菜单
       uniqueOpened: false, // 是否只保持一个子菜单的展开
-      hamburger: false, // 折叠图标
+      hamburger: true, // 折叠图标
       screenfull: false, // 全屏图标
       size: false, // 尺寸图标
       locale: false, // 多语言图标
