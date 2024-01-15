@@ -9,15 +9,6 @@ import { NO_RESET_WHITE_LIST } from '@/constants'
 const { t } = useI18n()
 
 export const constantRouterMap: AppRouteRecordRaw[] = [
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/dashboard/analysis',
-  //   name: 'Root',
-  //   meta: {
-  //     hidden: true
-  //   }
-  // },
   {
     path: '/',
     component: Layout,
@@ -67,29 +58,6 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
 ]
 
 export const asyncRouterMap: AppRouteRecordRaw[] = [
-  // {
-  //   path: '/dashboard',
-  //   component: Layout,
-  //   redirect: '/dashboard/analysis',
-  //   name: 'Dashboard',
-  //   meta: {
-  //     title: t('router.dashboard'),
-  //     icon: 'ant-design:dashboard-filled',
-  //     alwaysShow: true
-  //   },
-  //   children: [
-  //     {
-  //       path: 'analysis',
-  //       component: () => import('@/views/Dashboard/Analysis.vue'),
-  //       name: 'Analysis',
-  //       meta: {
-  //         title: t('router.analysis'),
-  //         noCache: true,
-  //         affix: true
-  //       }
-  //     }
-  //   ]
-  // },
   {
     path: '/',
     component: Layout,
