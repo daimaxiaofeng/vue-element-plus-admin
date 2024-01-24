@@ -51,7 +51,7 @@ export const useAppStore = defineStore('app', {
       tagsViewIcon: false, // 是否显示标签图标
       logo: true, // logo
       fixedHeader: true, // 固定toolheader
-      footer: true, // 显示页脚
+      footer: false, // 显示页脚
       greyMode: false, // 是否开始灰色模式，用于特殊悼念日
       dynamicRouter: false, // 是否动态路由
       serverDynamicRouter: false, // 是否服务端渲染动态路由
@@ -66,9 +66,9 @@ export const useAppStore = defineStore('app', {
         // 左侧菜单边框颜色
         leftMenuBorderColor: 'inherit',
         // 左侧菜单背景颜色
-        leftMenuBgColor: '#001529',
+        leftMenuBgColor: '#273352',
         // 左侧菜单浅色背景颜色
-        leftMenuBgLightColor: '#0f2438',
+        leftMenuBgLightColor: '#273352',
         // 左侧菜单选中背景颜色
         leftMenuBgActiveColor: 'var(--el-color-primary)',
         // 左侧菜单收起选中背景颜色
