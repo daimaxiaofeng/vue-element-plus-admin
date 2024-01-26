@@ -1,5 +1,8 @@
 <template>
-  <ContentWrap title="GIF 表情包制作" message="选择模板，填入台词，即可制作。">
+  <el-card shadow="never">
+    <template #header>
+      <span>GIF 表情包制作</span>
+    </template>
     <el-form :model="form" label-width="120px">
       <el-form-item label="模板">
         <el-select v-model="form.tpl" placeholder="选择表情包模板">
@@ -14,7 +17,7 @@
       <el-form-item>
         <el-image style="width: 300px" :src="getImageSrc()" fit="contain" />
       </el-form-item>
-      <br />
+      <el-divider border-style="none" />
       <el-form-item
         :label="`第 ${index + 1} 句`"
         v-for="(placeholder, index) in getSelectedOption().placeholders"
@@ -27,17 +30,20 @@
         <el-button @click="onReset">重置</el-button>
       </el-form-item>
     </el-form>
-    <el-dialog title="制作成功" v-model="dialogVisible" class="custom-dialog">
-      <el-form-item>
-        <el-image style="width: 300px" :src="imageUrl" fit="contain" />
-      </el-form-item>
-      <br />
-      <el-form-item>
-        <el-button type="primary" @click="downloadImage">下载</el-button>
-        <el-button @click="dialogVisible = false">取消</el-button>
-      </el-form-item>
+    <el-dialog title="制作成功" v-model="dialogVisible" class="custom-dialog" width="30%" center>
+      <el-card>
+        <el-form-item>
+          <el-image style="width: 300px" :src="imageUrl" fit="contain" />
+        </el-form-item>
+      </el-card>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button type="primary" @click="downloadImage">下载</el-button>
+          <el-button @click="dialogVisible = false">取消</el-button>
+        </span>
+      </template>
     </el-dialog>
-  </ContentWrap>
+  </el-card>
 </template>
 
 <script lang="ts" setup>
@@ -50,9 +56,10 @@ import {
   ElOption,
   ElButton,
   ElDialog,
-  ElImage
+  ElImage,
+  ElCard,
+  ElDivider
 } from 'element-plus'
-import { ContentWrap } from '@/components/ContentWrap'
 import axios from 'axios'
 
 import wangjingzegif from '../../assets/apps/gif-maker/wangjingze.gif'
@@ -175,6 +182,7 @@ const downloadImage = () => {
 <style>
 .custom-dialog {
   width: 20%;
+  border-radius: 2%;
 }
 
 @media (width <= 768px) {

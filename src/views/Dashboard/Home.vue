@@ -1,6 +1,9 @@
 <template>
-  <ContentWrap title="欢迎来到 @代码小风 的小站">
-    <el-text class="mx-1">
+  <el-card shadow="never">
+    <template #header>
+      <span>欢迎来到 @代码小风 的小站</span>
+    </template>
+    <el-text>
       <p>
         全平台统一账号（<b>抖音</b>、哔哩哔哩、小红书等都有注册）:
         <span class="account_name">@代码小风</span>
@@ -21,12 +24,13 @@
       </p>
       <p>Good Luck.</p>
     </el-text>
-  </ContentWrap>
+  </el-card>
 </template>
+
 <script lang="ts" setup>
-import { ContentWrap } from '@/components/ContentWrap'
-import { ElLink, ElText } from 'element-plus'
+import { ElLink, ElText, ElCard } from 'element-plus'
 </script>
+
 <style>
 .account_name {
   color: rgb(169 93 0);
