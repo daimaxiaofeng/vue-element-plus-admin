@@ -31,7 +31,7 @@
       </el-form-item>
     </el-form>
     <el-dialog title="制作成功" v-model="dialogVisible" class="custom-dialog" width="30%" center>
-      <el-card>
+      <el-card shadow="never">
         <el-form-item>
           <el-image style="width: 300px" :src="imageUrl" fit="contain" />
         </el-form-item>
@@ -181,15 +181,10 @@ const downloadImage = () => {
 
 <style>
 .custom-dialog {
-  width: 20%;
-  border-radius: 2%;
+  width: 320px !important;
 }
 
 @media (width <= 768px) {
-  .custom-dialog {
-    width: 80%;
-  }
-
   .el-form-item__label {
     width: unset !important;
     min-width: 60px;
