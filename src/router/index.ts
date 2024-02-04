@@ -12,7 +12,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
   {
     path: '/',
     component: Layout,
-    name: 'Home',
+    name: 'Root',
     meta: {},
     children: [
       {
