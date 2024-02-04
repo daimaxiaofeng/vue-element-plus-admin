@@ -5,7 +5,7 @@
     </template>
     <el-form :model="form" label-width="120px">
       <el-form-item label="工具">
-        <el-select v-model="form.tool" placeholder="选择工具">
+        <el-select v-model="form.tool" placeholder="请选择">
           <el-option
             v-for="option in options"
             :key="option.value"
@@ -15,7 +15,7 @@
         </el-select>
       </el-form-item>
     </el-form>
-    <el-divider />
+    <el-divider v-if="form.tool != ''" />
     <gif-maker v-if="form.tool === 'gif-maker'">GIF 表情包制作</gif-maker>
     <p v-if="form.tool === 'test'">测试空白页面</p>
   </el-card>
@@ -27,7 +27,7 @@ import { ElForm, ElFormItem, ElSelect, ElOption, ElCard, ElDivider } from 'eleme
 import GifMaker from './Gif-maker.vue'
 
 const form = reactive({
-  tool: 'gif-maker'
+  tool: ''
 })
 
 const options = ref([
