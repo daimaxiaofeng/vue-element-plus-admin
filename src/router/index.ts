@@ -12,7 +12,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
   {
     path: '/',
     component: Layout,
-    name: 'Root',
+    name: 'Home',
     meta: {},
     children: [
       {
@@ -21,7 +21,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
         name: 'Home',
         meta: {
           title: t('router.dashboard'),
-          icon: 'ant-design:dashboard-filled'
+          icon: 'ant-design:home-filled'
         }
       }
     ]
@@ -67,22 +67,35 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
 
 export const asyncRouterMap: AppRouteRecordRaw[] = [
   {
-    path: '/apps',
+    path: '/tools',
     component: Layout,
-    redirect: '/apps/gif-maker',
-    name: 'Apps',
-    meta: {
-      title: t('router.apps'),
-      icon: 'ep:management',
-      alwaysShow: true
-    },
+    name: 'Tools',
+    meta: {},
     children: [
       {
-        path: 'gif-maker',
-        component: () => import('@/views/Apps/Gif-maker.vue'),
-        name: 'Gif-maker',
+        path: '',
+        component: () => import('@/views/Tools/Tools.vue'),
+        name: 'Tools',
         meta: {
-          title: t('router.gifMaker')
+          title: t('router.tool'),
+          icon: 'ant-design:tool-filled'
+        }
+      }
+    ]
+  },
+  {
+    path: '/download',
+    component: Layout,
+    name: 'Download',
+    meta: {},
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Download/Download.vue'),
+        name: 'Download',
+        meta: {
+          title: t('router.download'),
+          icon: 'ant-design:download-outlined'
         }
       }
     ]

@@ -181,7 +181,8 @@ export default {
     videoPlayer: '视频播放器',
     tableVideoPreview: '表格视频预览',
     cardTable: '卡片表格',
-    apps: '在线应用',
+    tool: '工具',
+    download: '下载',
     gifMaker: 'GIF 表情包制作'
   },
   permission: {

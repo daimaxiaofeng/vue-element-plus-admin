@@ -1,49 +1,43 @@
 <template>
-  <el-card shadow="never">
-    <template #header>
-      <span>GIF 表情包制作</span>
+  <el-form :model="form" label-width="120px">
+    <el-form-item label="模板">
+      <el-select v-model="form.tpl" placeholder="选择表情包模板">
+        <el-option
+          v-for="option in options"
+          :key="option.value"
+          :label="option.label"
+          :value="option.value"
+        />
+      </el-select>
+    </el-form-item>
+    <el-form-item>
+      <el-image style="width: 240px" :src="getImageSrc()" fit="contain" />
+    </el-form-item>
+    <el-form-item
+      :label="`第 ${index + 1} 句`"
+      v-for="(placeholder, index) in getSelectedOption().placeholders"
+      :key="index"
+    >
+      <el-input v-model="form.sentences[index]" :placeholder="placeholder" />
+    </el-form-item>
+    <el-form-item>
+      <el-button type="primary" :loading="loading" @click="onSubmit">制作</el-button>
+      <el-button @click="onReset">重置</el-button>
+    </el-form-item>
+  </el-form>
+  <el-dialog title="制作成功" v-model="dialogVisible" class="custom-dialog" width="30%" center>
+    <el-card shadow="never">
+      <el-form-item>
+        <el-image style="width: 240px" :src="imageUrl" fit="contain" />
+      </el-form-item>
+    </el-card>
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button type="primary" @click="downloadImage">下载</el-button>
+        <el-button @click="dialogVisible = false">取消</el-button>
+      </span>
     </template>
-    <el-form :model="form" label-width="120px">
-      <el-form-item label="模板">
-        <el-select v-model="form.tpl" placeholder="选择表情包模板">
-          <el-option
-            v-for="option in options"
-            :key="option.value"
-            :label="option.label"
-            :value="option.value"
-          />
-        </el-select>
-      </el-form-item>
-      <el-form-item>
-        <el-image style="width: 300px" :src="getImageSrc()" fit="contain" />
-      </el-form-item>
-      <el-divider border-style="none" />
-      <el-form-item
-        :label="`第 ${index + 1} 句`"
-        v-for="(placeholder, index) in getSelectedOption().placeholders"
-        :key="index"
-      >
-        <el-input v-model="form.sentences[index]" :placeholder="placeholder" />
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" :loading="loading" @click="onSubmit">制作</el-button>
-        <el-button @click="onReset">重置</el-button>
-      </el-form-item>
-    </el-form>
-    <el-dialog title="制作成功" v-model="dialogVisible" class="custom-dialog" width="30%" center>
-      <el-card shadow="never">
-        <el-form-item>
-          <el-image style="width: 300px" :src="imageUrl" fit="contain" />
-        </el-form-item>
-      </el-card>
-      <template #footer>
-        <span class="dialog-footer">
-          <el-button type="primary" @click="downloadImage">下载</el-button>
-          <el-button @click="dialogVisible = false">取消</el-button>
-        </span>
-      </template>
-    </el-dialog>
-  </el-card>
+  </el-dialog>
 </template>
 
 <script lang="ts" setup>
@@ -57,8 +51,7 @@ import {
   ElButton,
   ElDialog,
   ElImage,
-  ElCard,
-  ElDivider
+  ElCard
 } from 'element-plus'
 import axios from 'axios'
 
@@ -182,6 +175,7 @@ const downloadImage = () => {
 <style>
 .custom-dialog {
   width: 320px !important;
+  border-radius: 3%;
 }
 
 @media (width <= 768px) {
