@@ -8,7 +8,7 @@ const { push } = useRouter()
 const permissionStore = usePermissionStore()
 
 const errorClick = () => {
-  push(permissionStore.addRouters[0]?.path as string)
+  push(permissionStore.routers[0]?.path as string)
 }
 </script>
 
