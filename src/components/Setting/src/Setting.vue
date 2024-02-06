@@ -31,8 +31,6 @@ const drawer = ref(false)
 // 主题色相关
 const systemTheme = ref(appStore.getTheme.elColorPrimary)
 
-setCssVar('--el-color-primary', '#0096c7')
-
 const setSystemTheme = (color: string) => {
   setCssVar('--el-color-primary', color)
   appStore.setTheme({ elColorPrimary: color })

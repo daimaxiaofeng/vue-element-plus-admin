@@ -32,6 +32,8 @@ interface AppState {
   fixedMenu: boolean
 }
 
+setCssVar('--tags-view-height', '0px')
+
 export const useAppStore = defineStore('app', {
   state: (): AppState => {
     return {
@@ -51,7 +53,7 @@ export const useAppStore = defineStore('app', {
       tagsViewIcon: false, // 是否显示标签图标
       logo: true, // logo
       fixedHeader: true, // 固定toolheader
-      footer: false, // 显示页脚
+      footer: true, // 显示页脚
       greyMode: false, // 是否开始灰色模式，用于特殊悼念日
       dynamicRouter: false, // 是否动态路由
       serverDynamicRouter: false, // 是否服务端渲染动态路由

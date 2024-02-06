@@ -2,6 +2,7 @@
 import { useAppStore } from '@/store/modules/app'
 import { computed } from 'vue'
 import { useDesign } from '@/hooks/web/useDesign'
+import { ElText } from 'element-plus'
 
 const { getPrefixCls } = useDesign()
 
@@ -15,8 +16,30 @@ const title = computed(() => appStore.getTitle)
 <template>
   <div
     :class="prefixCls"
-    class="text-center text-[var(--el-text-color-placeholder)] bg-[var(--app-content-bg-color)] h-[var(--app-footer-height)] leading-[var(--app-footer-height)] dark:bg-[var(--el-bg-color)]"
+    class="text-center text-[var(--el-text-color-placeholder)] bg-[var(--app-content-bg-color)] h-[var(--app-footer-height)] leading-[var(--app-footer-height)] dark:bg-[var(--el-bg-color)] dmxf-footer"
   >
-    Copyright ©2021-present {{ title }}
+    <el-text class="footer-text">Copyright ©2024 By {{ title }}</el-text>
+    <el-text class="footer-text">&nbsp;&nbsp;-&nbsp;&nbsp;</el-text>
+    <el-text class="footer-text"
+      ><a href="https://beian.miit.gov.cn/" target="_blank">京 ICP 备 2024000000 号</a>
+    </el-text>
   </div>
 </template>
+<style>
+.dmxf-footer el-text {
+  font-size: 8px !important;
+}
+
+.dmxf-footer a {
+  text-decoration-line: none;
+  color: var(--el-text-color-regular);
+}
+
+.dmxf-footer a:hover {
+  color: var(--el-color-primary);
+}
+
+.footer-text {
+  font-size: 13px;
+}
+</style>
