@@ -8,6 +8,7 @@ import { Screenfull } from '@/components/Screenfull'
 import { Breadcrumb } from '@/components/Breadcrumb'
 import { useAppStore } from '@/store/modules/app'
 import { useDesign } from '@/hooks/web/useDesign'
+import { Clear } from '@/components/Setting'
 
 const { getPrefixCls, variables } = useDesign()
 
@@ -66,6 +67,7 @@ export default defineComponent({
             ></LocaleDropdown>
           ) : undefined}
           {/* <UserInfo></UserInfo> */}
+          <Clear></Clear>
         </div>
       </div>
     )
