@@ -21,7 +21,7 @@ const title = computed(() => appStore.getTitle)
     <el-text class="footer-text">Copyright © 2024 By {{ title }}</el-text>
     <el-text class="footer-text">&nbsp;&nbsp;-&nbsp;&nbsp;</el-text>
     <el-text class="footer-text"
-      ><a href="https://beian.miit.gov.cn/" target="_blank">京 ICP 备 2021023456 号 - 2</a>
+      ><a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2021023456号-2</a>
     </el-text>
   </div>
 </template>

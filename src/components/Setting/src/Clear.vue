@@ -15,7 +15,7 @@ const clear = () => {
 </script>
 
 <template>
-  <el-button :class="prefixCls" @click="clear" type="primary">
+  <el-button :class="prefixCls" class="clearBtn" @click="clear" type="primary">
     <Icon icon="ant-design:clear-outlined" /> &nbsp;&nbsp;清理缓存&nbsp;
   </el-button>
 </template>
@@ -26,5 +26,9 @@ const clear = () => {
 .@{prefix-cls} {
   margin-right: 10px;
   border-radius: 6px;
+}
+
+.clearBtn {
+  font-weight: normal;
 }
 </style>
