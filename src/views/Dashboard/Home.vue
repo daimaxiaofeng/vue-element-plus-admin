@@ -5,7 +5,7 @@
     </template>
     <el-text>
       <p>
-        全平台统一账号（<b>抖音</b>、哔哩哔哩、小红书等都有注册）:
+        各平台统一账号（ 哔哩哔哩 / 西瓜视频 / 抖音 ）:
         <span class="account_name">@代码小风</span>
         ，感谢大家的关注。
       </p>
@@ -16,9 +16,8 @@
         <el-link href="https://www.google.cn/chrome/" target="_blank">Chrome 浏览器</el-link>
         进行了适配，使用其他设备或浏览器访问本站时可能会出现样式问题（如果有时间我肯定会优化的）。
       </p>
-      <p>你可以在页面<b>左栏</b>里找到这个网站目前有提供的功能。</p>
       <p>
-        如果你有什么其他想要的功能，也可以在抖音粉丝群或发送邮件到
+        如果你还有有什么其他想要的功能，欢迎在粉丝群或发送邮件到
         <el-link href="mailto:daimaxiaofeng@qq.com" target="_blank">daimaxiaofeng@qq.com</el-link>
         告诉我 ~
       </p>

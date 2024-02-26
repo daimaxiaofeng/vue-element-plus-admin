@@ -18,10 +18,10 @@ const title = computed(() => appStore.getTitle)
     :class="prefixCls"
     class="text-center text-[var(--el-text-color-placeholder)] bg-[var(--app-content-bg-color)] h-[var(--app-footer-height)] leading-[var(--app-footer-height)] dark:bg-[var(--el-bg-color)] dmxf-footer"
   >
-    <el-text class="footer-text">Copyright ©2024 By {{ title }}</el-text>
+    <el-text class="footer-text">Copyright © 2024 By {{ title }}</el-text>
     <el-text class="footer-text">&nbsp;&nbsp;-&nbsp;&nbsp;</el-text>
     <el-text class="footer-text"
-      ><a href="https://beian.miit.gov.cn/" target="_blank">京 ICP 备 2024000000 号</a>
+      ><a href="https://beian.miit.gov.cn/" target="_blank">京 ICP 备 2021023456 号 - 2</a>
     </el-text>
   </div>
 </template>
