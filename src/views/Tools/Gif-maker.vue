@@ -141,7 +141,7 @@ const onSubmit = () => {
       jsonData[`${index}`] = placeholder
     }
   }
-  const url = 'http://8.142.120.167/api/gif-maker/make/' + form.tpl
+  const url = 'https://daimaxiaofeng.com/api/gif-maker/make/' + form.tpl
   const jsonString = JSON.stringify(jsonData)
   axios
     .post(url, jsonString, { responseType: 'blob' })
